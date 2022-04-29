@@ -1,0 +1,64 @@
+<ion-header class="header">
+  <ion-toolbar class="toolbar">
+    <figure class="figure">
+      <img  src="assets/img/logoNexos.png" />
+    </figure>
+    <ion-buttons  slot="end">
+      <ion-menu-button class="btntoolbar"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <div class="font_white" >Buen dia,</div>
+  <div class="font_white"><h1>Wilson</h1></div>
+</ion-header>
+<ion-content padding>
+  <div>Productos</div>
+  <ion-card *ngFor="let cuenta of cuentas">
+    <ion-card-header>
+      <ion-item  lines="none">
+        <ion-icon *ngIf="cuenta.tipo === 1" name="cash"  slot="start" style="zoom:1.0;"></ion-icon>
+        <ion-icon *ngIf="cuenta.tipo === 2" name="logo-usd"  slot="start" style="zoom:1.0;"></ion-icon>
+        <div *ngIf="cuenta.tipo === 1"> Cuenta de Ahorros </div>
+        <div *ngIf="cuenta.tipo === 2"> Cuenta Corriente </div>
+      </ion-item>
+      <div>No. {{cuenta.ncuenta}}</div>
+      <br>
+      <div>Saldo Disponible</div>
+      <div><h2>${{cuenta.saldo}}</h2></div>
+      
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+<ion-footer text-center>
+  <div class="footer" padding>
+    <div>
+        <div>
+          <ion-icon name="logo-usd"  style="zoom:2.0;"> </ion-icon>
+        </div>
+        <div>Pagos</div>
+    </div>
+
+    <div>
+      <div>
+        <ion-icon name="swap"   style="zoom:2.0;"> </ion-icon>
+      </div>
+      <div>Tranferencias</div>
+  </div>
+  
+  <div>
+    <div>
+      <ion-icon name="qr-scanner" (click)="qrscanner()"  style="zoom:2.0;"> </ion-icon>
+    </div>
+    <div>Qr</div>
+</div>
+
+<div>
+  <div><ion-icon name="paper"   style="zoom:2.0;"> </ion-icon>
+  </div>
+  <div>Documentos</div>
+</div>
+ 
+  
+
+</div>
+</ion-footer>

@@ -1,0 +1,115 @@
+<ion-header class="header">
+  <figure text-center padding>
+    <img  src="assets/img/logoNexos.png" />
+  </figure>
+</ion-header>
+
+<ion-content padding class="content">
+  <div class="curvas_content"></div>
+  <div padding>Bienvenido a su Banca Movil</div>
+  <div id="nameBank" padding > <strong> NexosBank</strong></div>
+
+  <form padding [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item>
+      <ion-icon name="mail" color="primary" slot="start"></ion-icon>
+      <ion-label>Correo</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div
+          *ngIf="
+            loginForm.get('email').hasError(validation.type) &&
+            (loginForm.get('email').dirty || loginForm.get('email').touched)
+          "
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-icon name="key" color="primary" slot="start"></ion-icon>
+      <ion-label>Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div
+          *ngIf="
+            loginForm.get('password').hasError(validation.type) &&
+            (loginForm.get('password').dirty ||
+              loginForm.get('password').touched)
+          "
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    {{ errorMessage }}
+
+
+    <div class="btns"  text-center padding>
+      <div>
+    <ion-button
+    
+      shape="round"
+      color="primary"
+      [disabled]="!loginForm.valid"
+      type="submit"
+      >Ingresa Ahora !</ion-button
+    >
+  </div>
+  <div>
+      <ion-icon name="finger-print" color="primary" slot="end" style="zoom:3.0;">
+      </ion-icon>
+    </div>
+  </div>
+  </form>
+
+  <div text-center><a href="#">Olvide mi clave</a></div>
+</ion-content>
+
+<ion-footer text-center padding>
+  <ion-slides pager="false" [options]="slideOpts">
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-item  lines="none">
+            <ion-icon name="person" color="primary" slot="start" style="zoom:2.0;"></ion-icon>
+          </ion-item>
+          Registrarme en la App.
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-item  lines="none">
+            <ion-icon name="chatbubbles" color="primary" slot="start" style="zoom:2.0;"></ion-icon>
+          </ion-item>
+          Hablar con un asesor
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-item lines="none">
+            <ion-icon name="call" color="primary" slot="start" style="zoom:2.0;"></ion-icon>
+          </ion-item>
+          Lineas de atencion
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-item lines="none">
+            <ion-icon name="map" color="primary" slot="start" style="zoom:2.0;"></ion-icon>
+          </ion-item>
+          Canales presenciales
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-footer>

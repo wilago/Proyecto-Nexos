@@ -1,0 +1,7 @@
+{
+  "appId": "nexos.bank.com",
+  "appName": "Bank Nexos",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "nexos-bank",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {
+      "enabled": false
+    }
+  },
+  "type": "angular"
+}

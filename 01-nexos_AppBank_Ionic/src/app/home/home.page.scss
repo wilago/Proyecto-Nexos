@@ -1,0 +1,36 @@
+.header{
+    background-color: #006aca;
+    border-bottom: 1px solid;
+    border-radius: 5px;
+    }
+
+
+.font_white{
+    color: #FFFF;
+    margin-left:20px;
+}
+
+figure{
+    width: 60px;
+
+}
+
+.toolbar{
+    --background: #006aca; 
+   
+
+}
+
+.footer{
+    display: flex;
+    background-color: #006aca;
+    color: #FFFF;
+    font-size:12px;
+    justify-content: space-between;
+    border-top: 1px solid;
+    border-radius: 5px;
+}
+
+.btntoolbar{
+    color: #FFFF;
+ }
